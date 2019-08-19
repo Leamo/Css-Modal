@@ -1,0 +1,49 @@
+div[id^=modal] {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	top:-100%;
+	visibility: hidden;
+	opacity: 0;
+	box-sizing:border-box;
+}
+
+div[id^=modal] .overlay {
+	position: absolute;
+	background-color: #000;
+	background: rgba(0,0,0,.7);
+	cursor: default;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+div[id^=modal] .modal-content {
+	position: absolute;
+	background: #f7f7f7;
+	margin: 10%;
+	padding: 20px;
+	z-index: 20;
+	top: 0;
+	bottom: 0;
+}
+
+#chkbx-modal {
+	display: none;
+}
+
+label.open-modal,
+label.close-modal {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+div[id^=modal]:target,
+#chkbx-modal:checked + div[id^=modal] {
+	visibility: visible;
+	opacity: 1;
+	top: 0;
+	bottom: 100%;
+}
