@@ -1,0 +1,52 @@
+div[id^=modal] {
+	transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+	-moz-transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+	-webkit-transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+}
+
+div[id^=modal]:target,
+#chkbx-modal:checked + div[id^=modal] {
+	transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-webkit-transition: opacity 0.4s ease-in-out;
+}
+
+div[id^=modal] .modal-content {
+    border-radius: 5px;
+}
+
+div[id^=modal]  .modal-content .close {
+    position: relative;
+    float: right;
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+    color: rgba(0, 0, 0, 0);
+    margin: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+div[id^=modal] .modal-content .close:hover {
+    opacity: 0.7;
+}
+
+div[id^=modal] .modal-content .close:before,
+div[id^=modal] .modal-content .close:after {
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    content: ' ';
+    height: 27px;
+    width: 2px;
+    background-color: #333;
+}
+
+div[id^=modal] .modal-content .close:before {
+    transform: rotate(45deg);
+}
+
+div[id^=modal] .modal-content .close:after {
+    transform: rotate(-45deg);
+}

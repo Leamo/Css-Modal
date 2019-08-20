@@ -6,7 +6,9 @@ div[id^=modal] {
 	top:-100%;
 	visibility: hidden;
 	opacity: 0;
-	box-sizing:border-box;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 div[id^=modal] .overlay {
@@ -28,6 +30,9 @@ div[id^=modal] .modal-content {
 	z-index: 20;
 	top: 0;
 	bottom: 0;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 #chkbx-modal {
@@ -35,7 +40,7 @@ div[id^=modal] .modal-content {
 }
 
 label.open-modal,
-label.close-modal {
+label.close {
 	cursor: pointer;
 	text-decoration: underline;
 }
