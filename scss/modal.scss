@@ -1,0 +1,77 @@
+@import 'style';
+
+$padding: 20px;
+
+%show-modal {
+    visibility: visible;
+	opacity: 1;
+	top: 0;
+	bottom: 100%;
+}
+
+div[id^=modal] {
+	position: fixed;
+    z-index: 10;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	top:-100%;
+	visibility: hidden;
+	opacity: 0;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    &:target {
+        @extend %show-modal;
+    }
+
+    .overlay {
+        position: absolute;
+        background-color: #000;
+        background: rgba(0,0,0,.7);
+        cursor: default;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal-content {
+        position: absolute;
+        background: #f7f7f7;
+        margin: 3% 10%;
+        padding: $padding;
+        z-index: 20;
+        top: 0;
+        bottom: 0;
+        width: 80%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+
+        &:after {
+            content: "";
+            display: block;
+            height: $padding;
+            width: 100%;
+        }
+    }
+}
+
+#chkbx-modal {
+    display: none;
+    
+    &:checked {
+        & + div[id^=modal] {
+            @extend %show-modal;
+        }
+    }
+}
+
+label.open-modal,
+label.close {
+	cursor: pointer;
+	text-decoration: underline;
+}

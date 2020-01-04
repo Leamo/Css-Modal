@@ -1,0 +1,54 @@
+%show-effect {
+    transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-webkit-transition: opacity 0.4s ease-in-out;
+}
+
+div[id^=modal] {
+	transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+	-moz-transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+    -webkit-transition: all 0s 0.4s, opacity 0.4s ease-in-out;
+    
+    &:target {
+        @extend %show-effect;
+    }
+
+    .modal-content {
+        border-radius: 5px;
+
+        .close {
+            position: relative;
+            float: right;
+            width: 34px;
+            height: 34px;
+            opacity: 1;
+            color: rgba(0, 0, 0, 0);
+            margin: 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            overflow: hidden;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+            &:before,
+            &:after {
+                position: absolute;
+                left: 15px;
+                top: 4px;
+                content: ' ';
+                height: 27px;
+                width: 2px;
+                background-color: #333;
+            }
+        }
+    }
+}
