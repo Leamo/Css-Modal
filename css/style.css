@@ -26,6 +26,7 @@ div[id^=modal]  .modal-content .close {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    overflow: hidden;
 }
 
 div[id^=modal] .modal-content .close:hover {

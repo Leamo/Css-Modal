@@ -1,8 +1,9 @@
 div[id^=modal] {
 	position: fixed;
-	left: 0;
+	z-index: 10;
 	width: 100%;
 	height: 100%;
+	left: 0;
 	top:-100%;
 	visibility: hidden;
 	opacity: 0;
@@ -17,22 +18,32 @@ div[id^=modal] .overlay {
 	background: rgba(0,0,0,.7);
 	cursor: default;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 10;
 }
 
 div[id^=modal] .modal-content {
 	position: absolute;
 	background: #f7f7f7;
-	margin: 10%;
+	margin: 3% 10%;
 	padding: 20px;
 	z-index: 20;
 	top: 0;
 	bottom: 0;
+	width: 80%;
+	overflow-y: auto;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+/* Hack for padding bottom in case of overflow */
+/* Use the same value for element height than modal-content padding */
+div[id^=modal] .modal-content:after {
+	content: "";
+	display: block;
+	height: 20px;
+	width: 100%;
 }
 
 #chkbx-modal {
